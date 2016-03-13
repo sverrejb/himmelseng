@@ -1,8 +1,8 @@
 Template.verse.helpers({
-    domain: function() {
+    random_verse: function() {
         var array = Verses.find().fetch();
         var randomIndex = Math.floor( Math.random() * array.length );
         var element = array[randomIndex];
-        return element;
+        return element.text;
     }
 });
