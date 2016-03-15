@@ -1,8 +1,10 @@
 <template name="verseSubmit">
     <form class="main form page">
         <div class="form-group">
-            <label for="comment">Vers:</label>
-            <textarea name="text" class="form-control" rows="5" id="comment"></textarea>
+            <label for="title">Navn på vers:</label>
+            <input name="title" id="title" type="text" value="" placeholder="Valgfritt" class="form-control"/>
+            <label for="verse">Vers:</label>
+            <textarea name="text" class="form-control" rows="5" id="verse" placeholder="Formater vers på fire linjer, takk :)"></textarea>
         </div>
         <input type="submit" value="Send inn!" class="btn btn-primary"/>
     </form>
