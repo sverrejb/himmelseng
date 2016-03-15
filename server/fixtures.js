@@ -5,6 +5,4 @@ if (Verses.find().count() === 0) {
             text: Fake.paragraph(4)
         });
     }
-
-
 }
