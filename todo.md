@@ -6,3 +6,5 @@
 - Filter on linjeforeninger etc.
 - Pretty layout / design
 - Do input validation
+- Generate user defined "playlists"
+- Show number of active sessions
