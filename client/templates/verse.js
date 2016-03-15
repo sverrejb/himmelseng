@@ -1,9 +1,17 @@
+//TODO: Move random verse generation to server side
+
 function setRandomVerse () {
     Meteor.call("randomVerse", function (err, verseId) {
         //TODO: handle error
 
         Session.set("randomVerseId", verseId);
     });
+}
+
+function setRandomVerseInSession(){
+    var array = Verses.find().fetch();
+    var randomId = Random.choice(array)._id;
+    Session.set('currentVerse', randomId);
 }
 
 Template.verse.helpers({
@@ -17,12 +25,6 @@ Template.verse.events({
         setRandomVerseInSession();
     }
 });
-
-setRandomVerseInSession = function(){
-    var array = Verses.find().fetch();
-    var randomId = Random.choice(array)._id;
-    Session.set('currentVerse', randomId);
-};
 
 Template.verse.onCreated(function () {
     // Kjøres igjen hver gang en "reaktiv" kilde endrer seg,
