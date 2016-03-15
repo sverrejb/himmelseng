@@ -5,3 +5,7 @@ Template.verse.helpers({
         return  verse.title +": "+  verse.text
     }
 });
+
+Template.verse.events({
+    'click #refresh_button': function(e){ alert('hello!'); }
+});
