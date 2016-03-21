@@ -7,7 +7,7 @@ function makeFakeVerse() {
 }
 
 if (Verses.find().count() === 0) {
-    for (var i = 0; i < 200; i++) {
+    for (var i = 0; i < 50; i++) {
         Verses.insert({
             title: 'Vers ' + i,
             text: makeFakeVerse()

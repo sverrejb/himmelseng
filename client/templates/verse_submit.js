@@ -3,7 +3,7 @@ Template.verseSubmit.events({
         e.preventDefault();
 
         var post = {
-            title: 'foo',
+            title: $(e.target).find('[name=title]').val(),
             text: $(e.target).find('[name=text]').val()
         };
 
