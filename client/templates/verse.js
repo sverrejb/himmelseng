@@ -5,9 +5,13 @@ function setRandomVerseInSession(){
 }
 
 Template.verse.helpers({
-    randomVerse: function() {
-        return Verses.findOne(Session.get("currentVerse"));
+    randomVerseTitle: function() {
+        return Verses.findOne(Session.get("currentVerse")).title;
+    },
+    randomVerseText: function () {
+        return Verses.findOne(Session.get("currentVerse")).text;
     }
+
 });
 
 Template.verse.events({
