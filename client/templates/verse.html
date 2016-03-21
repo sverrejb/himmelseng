@@ -1,10 +1,12 @@
 <template name="verse">
-    <div class="verse">
-        <div class="post-content">
-            <h2>Tilfeldig vers:</h2>
-            <p id="verse_container">{{randomVerseTitle}}</p>
-            <span class="pre"><p id="verse_container">{{randomVerseText}}</p></span>
-            <button type="button" id="refresh_button" class="btn btn-primary btn-lg btn-block">Nytt vers <span class="glyphicon glyphicon-refresh"></span></button>
-        </div>
+    <div class="post-content">
+        <h2>Tilfeldig vers:</h2>
+
+        <div class="card-panel">
+        <p id="verse_container">{{randomVerseTitle}}</p>
+        <span class="pre"><p id="verse_container">{{randomVerseText}}</p></span>
+    </div>
+    <button type="button" id="refresh_button" class="btn btn-primary btn-lg btn-block">Nytt vers <span
+            class="glyphicon glyphicon-refresh"></span></button>
     </div>
 </template>

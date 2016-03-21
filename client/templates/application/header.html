@@ -1,21 +1,14 @@
 <template name="header">
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{pathFor 'verse'}}">
-                Himmelseng
-                <span class="glyphicon glyphicon-bed"></span>
-            </a>
-        </div>
-        <div class="collapse navbar-collapse" id="navigation">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{pathFor 'verseSubmit'}}">Send inn vers!</a></li>
+    <nav>
+        <div class="navbar-wrapper container">
+            <a class="brand-logo" href="{{pathFor 'verse'}}">Himmelseng</a>
+            <ul class="right">
+                <li>
+                    <a href="{{pathFor 'verseSubmit'}}">Send inn vers!</a>
+                </li>
             </ul>
         </div>
     </nav>
+
+
 </template>

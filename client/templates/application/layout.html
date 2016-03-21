@@ -1,10 +1,12 @@
 <template name="layout">
-    <div class="container-fluid">
-        {{> header}}
-        <div id="main">
-            {{> yield}}
-            <div id="push"></div>
+
+    {{> header}}
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                {{> yield}}
+            </div>
         </div>
-        {{> footer}}
     </div>
+    {{> footer}}
 </template>
