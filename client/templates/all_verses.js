@@ -1,6 +1,6 @@
 Template.verse.helpers({
     derp: function() {
-        console.log('called')
+        console.log('called');
         return Verses.find()
     }
 });
