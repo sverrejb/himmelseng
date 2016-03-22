@@ -15,7 +15,7 @@ Template.verse.helpers({
 });
 
 Template.verse.events({
-    'click #refresh_button': function(e){
+    'click #refresh-button': function(e){
         setRandomVerseInSession();
     }
 });
