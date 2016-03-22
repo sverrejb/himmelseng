@@ -12,7 +12,20 @@ main {
     white-space: pre;
 }
 
+.button-collapse {
+    margin-left: 10px;
+}
+
 #refresh-button {
     display: inline-flex;
     vertical-align: middle;
+}
+
+#toast-container {
+    position: fixed !important;
+    bottom: 150px !important;
+}
+
+.onlinelogo {
+    height: 1em;
 }
