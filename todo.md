@@ -8,3 +8,4 @@
 - Generate user defined "playlists"
 - Show number of active sessions
 - give x new verses
+- search

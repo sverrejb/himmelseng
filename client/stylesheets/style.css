@@ -2,6 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-color: #fafafa;
 }
 
 main {
@@ -25,6 +26,7 @@ main {
     position: fixed !important;
     bottom: 150px !important;
 }
+
 
 .onlinelogo {
     height: 1em;
