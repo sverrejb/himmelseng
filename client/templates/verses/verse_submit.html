@@ -1,11 +1,25 @@
 <template name="verseSubmit">
-    <form class="main form page">
-        <div class="form-group">
-            <label for="title">Navn på vers:</label>
-            <input name="title" id="title" type="text" value="" placeholder="Valgfritt" class="form-control"/>
-            <label for="verse">Vers:</label>
-            <textarea name="text" class="form-control" rows="5" id="verse" placeholder="Formater vers på fire linjer, takk :)"></textarea>
-        </div>
-        <input type="submit" value="Send inn!" class="btn btn-primary"/>
-    </form>
+    <div class="row">
+        <h3>Send inn ditt vers:</h3>
+        <form class="col s12">
+            <div class="row valign-wrapper">
+                <div class="input-field col s8 valign">
+                    <input id="title" type="text" class="validate">
+                    <label for="title">Navn på vers</label>
+                </div>
+                <div class="col s4 red-text">
+                    <p><i>Valgfritt</i></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s8 valign">
+                    <textarea id="text" class="materialize-textarea"></textarea>
+                    <label for="text">Vers</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Send!
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
 </template>

@@ -8,6 +8,7 @@ Template.verseSubmit.events({
         };
 
         post._id = Verses.insert(post);
+        Materialize.toast('Takk for ditt bidrag!', 3000);
         Router.go('verse');
     }
 });

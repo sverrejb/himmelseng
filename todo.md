@@ -1,5 +1,4 @@
 # TODO:
-- Format verses to four lines on print.
 - Admin? Reject/Publish submitted verses?
 - List all verses in database?
 - Tag verses with "linjeforeninger" etc?
@@ -8,3 +7,4 @@
 - Do input validation
 - Generate user defined "playlists"
 - Show number of active sessions
+- give x new verses
