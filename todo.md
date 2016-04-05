@@ -1,11 +1,19 @@
 # TODO:
+
+## CRITICAL
 - Admin? Reject/Publish submitted verses?
-- List all verses in database?
+- Do input validation
+
+## IMPORTANT
 - Tag verses with "linjeforeninger" etc?
 - Filter on linjeforeninger etc.
-- Pretty layout / design
-- Do input validation
+
+
+## WOULD BE NICE
+- List all verses in database?
 - Generate user defined "playlists"
-- Show number of active sessions
 - give x new verses
 - search
+
+## PIPE DREAM
+- Show number of active sessions
