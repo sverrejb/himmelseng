@@ -3,6 +3,7 @@
 ## CRITICAL
 - Admin? Reject/Publish submitted verses?
 - Do input validation
+- Schemas 
 
 ## IMPORTANT
 - Tag verses with "linjeforeninger" etc?

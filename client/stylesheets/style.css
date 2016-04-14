@@ -13,6 +13,7 @@ main {
 
 .verse-panel {
     white-space: pre;
+    min-height: 4em;
 }
 
 .button-collapse {
@@ -32,5 +33,5 @@ main {
 
 .onlinelogo {
     height: 1em;
-    margin-bottom: -2px;
+    margin-bottom: -1px;
 }

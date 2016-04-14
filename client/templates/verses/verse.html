@@ -1,12 +1,14 @@
 <template name="verse">
     <div class="row">
         <h3>Tilfeldig vers:</h3>
-
-        <div class="card-panel">
-            <span class="card-title">{{randomVerseTitle}}</span>
-            <span class="verse-panel"><p>{{randomVerseText}}</p></span>
+        <div class="col s12 m8 l8">
+            <div class="card-panel">
+                <span class="card-title">{{randomVerseTitle}}</span>
+                <span class="verse-panel"><p>{{randomVerseText}}</p></span>
+            </div>
+            <button type="button" id="refresh-button" class="waves-effect waves-light green accent-4 btn-large">Nytt
+                vers <i
+                        class="material-icons">refresh</i></button>
         </div>
-        <button type="button" id="refresh-button" class="waves-effect waves-light green accent-4 btn-large">Nytt vers <i
-                class="material-icons">refresh</i></button>
     </div>
 </template>
