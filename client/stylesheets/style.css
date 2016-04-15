@@ -16,10 +16,6 @@ main {
     min-height: 4em;
 }
 
-.button-collapse {
-    margin-left: 10px;
-}
-
 #refresh-button {
     display: inline-flex;
     vertical-align: middle;
