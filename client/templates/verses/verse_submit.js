@@ -1,14 +1,18 @@
 Template.verseSubmit.events({
-    'submit form': function(e) {
-        e.preventDefault();
-
-        var post = {
-            title: $(e.target).find('[name=title]').val(),
-            text: $(e.target).find('[name=text]').val()
+    'submit .new-verse': function(event) {
+        event.preventDefault();
+        
+        const target = event.target;
+        
+        const post = {
+            title: target.title.value,
+            text: target.text.value
         };
 
         post._id = Verses.insert(post);
+        target.title.value = '';
+        target.text.value = '';
         Materialize.toast('Takk for ditt bidrag!', 3000);
-        Router.go('verse');
+        
     }
 });
