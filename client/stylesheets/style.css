@@ -31,3 +31,7 @@ main {
     height: 1em;
     margin-bottom: -1px;
 }
+
+.pre {
+    white-space: pre;
+}
