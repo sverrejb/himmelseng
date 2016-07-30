@@ -2,8 +2,9 @@
     <div class="allVerses">
         <div class="post-content">
             <h1>Alle vers:</h1>
-            {{#each derp}}
-                <p>Hei</p>
+            {{#each verses}}
+                <h5>{{this.title}}</h5>
+                <p class="pre">{{this.text}}</p>
             {{/each}}
         </div>
     </div>

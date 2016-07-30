@@ -1,8 +1,16 @@
+function makeFakeVerse() {
+    text = '';
+    for (var i = 0; i < 4; i++){
+        text = text += Fake.sentence(5) + '\n'
+    }
+    return text
+}
+
 if (Verses.find().count() === 0) {
-    for (var i = 0; i < 200; i++) {
+    for (var i = 0; i < 50; i++) {
         Verses.insert({
-            title: 'Verse ' + i,
-            text: Fake.paragraph(4)
+            title: 'Vers ' + i,
+            text: makeFakeVerse()
         });
     }
 }
