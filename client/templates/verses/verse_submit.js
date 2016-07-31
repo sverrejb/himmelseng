@@ -5,7 +5,8 @@ Template.verseSubmit.events({
         const target = event.target;
         const post = {
             title: target.title.value,
-            text: target.text.value
+            text: target.text.value,
+            freetextMetadata: target.metadata.value
         };
 
         const lineBreakCount = (post.text.match(/\n/g) || []).length;
@@ -16,6 +17,7 @@ Template.verseSubmit.events({
             post._id = Verses.insert(post);
             target.title.value = '';
             target.text.value = '';
+            target.metadata.value = '';
             Materialize.toast('Takk for ditt bidrag!', 3000);
         }
         
