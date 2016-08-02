@@ -6,7 +6,8 @@ Template.verseSubmit.events({
         const post = {
             title: target.title.value,
             text: target.text.value,
-            freetextMetadata: target.metadata.value
+            freetextMetadata: target.metadata.value,
+            studorg: target.studorg.value
         };
 
         const lineBreakCount = (post.text.match(/\n/g) || []).length;
@@ -22,4 +23,16 @@ Template.verseSubmit.events({
         }
         
     }
+});
+
+Template.verseSubmit.helpers({
+    getLinjeforeninger: function() {
+        $('select').material_select();
+        return [{name: 'Online', id: 0}, {name: 'Abakus', id: 1}]
+        
+    },
+});
+
+Template.verseSubmit.onRendered(function() {
+    $('select').material_select();
 });
