@@ -1,7 +1,7 @@
 Template.verseSubmit.events({
     'submit .new-verse': function(event) {
         event.preventDefault();
-        
+
         const target = event.target;
         const post = {
             title: target.title.value,
@@ -21,16 +21,16 @@ Template.verseSubmit.events({
             target.metadata.value = '';
             Materialize.toast('Takk for ditt bidrag!', 3000);
         }
-        
+
     }
 });
 
 Template.verseSubmit.helpers({
     getLinjeforeninger: function() {
         $('select').material_select();
-        return [{name: 'Online', id: 0}, {name: 'Abakus', id: 1}]
-        
-    },
+        console.log(Organizations.find().fetch());
+        return Organizations.find().fetch().to_array();
+    }
 });
 
 Template.verseSubmit.onRendered(function() {
