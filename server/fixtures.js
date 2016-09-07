@@ -9,24 +9,18 @@ function makeFakeVerse() {
 if (Organizations.find().count() === 0) {
     var data = JSON.parse(Assets.getText("student_organizations.json"))['student_organizations'];
     data.forEach(function (item, index, array) {
-        console.log("inserting" + item);
         Organizations.insert(item);
     })
 }
 
-/*if (Organizations.find().count() === 0){
-    Organizations.insert({
-        name:"Online",
-        id:0
-    });
-
-    Organizations.insert({
-        name:"Abakus",
-        id:1
-    })
-}*/
-
 if (Verses.find().count() === 0) {
+    var data = JSON.parse(Assets.getText("verses.json"))['verses']
+    data.forEach(function (item, index, array) {
+        Verses.insert(item);
+    })
+}
+
+/*if (Verses.find().count() === 0) {
     Verses.insert({
         title: "Marius Krakeli's vers",
         text: "Vi var en tur på eventyr \npå eventyr med styret. \nKrakels dansa gangnam-style, \nslo dama si i tryne."
@@ -41,4 +35,4 @@ if (Verses.find().count() === 0) {
             text: makeFakeVerse()
         });
     }
-}
+}*/
