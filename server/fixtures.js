@@ -1,10 +1,32 @@
 function makeFakeVerse() {
     text = '';
-    for (var i = 0; i < 4; i++){
+    for (var i = 0; i < 4; i++) {
         text = text += Fake.sentence(5) + '\n'
     }
     return text
 }
+
+if (Organizations.find().count() === 0) {
+    var data = JSON.parse(Assets.getText("student_organizations.json"))['student_organizations'];
+    data.forEach(function (item, index, array) {
+        Organizations.insert(item);
+    })
+}
+
+if (Verses.find().count() === 0) {
+    var data = JSON.parse(Assets.getText("verses.json"))['verses']
+    data.forEach(function (item, index, array) {
+        Verses.insert(item);
+    })
+}
+
+/*if (Verses.find().count() === 0) {
+    Verses.insert({
+        title: "Marius Krakeli's vers",
+        text: "Vi var en tur på eventyr \npå eventyr med styret. \nKrakels dansa gangnam-style, \nslo dama si i tryne."
+    })
+}
+
 
 if (Verses.find().count() === 0) {
     for (var i = 0; i < 50; i++) {
@@ -13,4 +35,4 @@ if (Verses.find().count() === 0) {
             text: makeFakeVerse()
         });
     }
-}
+}*/

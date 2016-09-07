@@ -1,0 +1,76 @@
+{
+  "student_organizations": [
+    {
+      "name": "Online",
+      "id": 0
+    },
+    {
+      "name": "Abakus",
+      "id": 1
+    },
+    {
+      "name": "AF Smørekoppen",
+      "id": 2
+    },
+    {
+      "name": "Broderskabet",
+      "id": 3
+    },
+    {
+      "name": "Delta",
+      "id": 4
+    },
+    {
+      "name": "Emil",
+      "id": 5
+    },
+    {
+      "name": "Høiskolens Chemikerforening",
+      "id": 6
+    },
+    {
+      "name": "H.M. Aarhønen",
+      "id": 7
+    },
+    {
+      "name": "Hybrida",
+      "id": 8
+    },
+    {
+      "name": "Janus",
+      "id": 9
+    },
+    {
+      "name": "Leonardo",
+      "id": 10
+    },
+    {
+      "name": "Mannhullet",
+      "id": 11
+    },
+    {
+      "name": "Nabla",
+      "id": 12
+    },
+    {
+      "name": "Omega",
+      "id": 13
+    },
+    {
+      "name": "Placebo",
+      "id": 14
+    },
+    {
+      "name": "Spanskrøret",
+      "id": 15
+    },
+    {
+      "name": "Timini",
+      "id": 16
+    },
+    {
+      "name": "Volvox & Alkymisten",
+      "id": 17
+    }
+  ]
+}
