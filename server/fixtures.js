@@ -34,10 +34,3 @@ if (Verses.find().count() === 0) {
         });
     }
 }
-
-if (Organizations.find().count() === 0){
-    Organizations.insert({
-        name:"Online",
-        id:0
-    });
-}

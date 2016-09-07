@@ -1,5 +1,5 @@
 Template.allVerses.helpers({
-    verses: function() {
+    verses: function () {
         return Verses.find()
-    },
-})
+    }
+});

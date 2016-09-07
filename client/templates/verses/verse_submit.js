@@ -1,5 +1,5 @@
 Template.verseSubmit.events({
-    'submit .new-verse': function(event) {
+    'submit .new-verse': function (event) {
         event.preventDefault();
 
         const target = event.target;
@@ -25,14 +25,14 @@ Template.verseSubmit.events({
     }
 });
 
+Meteor.subscribe('organizations');
+
 Template.verseSubmit.helpers({
-    getLinjeforeninger: function() {
-        $('select').material_select();
-        console.log(Organizations.find().fetch());
-        return Organizations.find().fetch().to_array();
+    organizations: function () {
+        return Organizations.find();
     }
 });
 
-Template.verseSubmit.onRendered(function() {
+Template.verseSubmit.onRendered(function () {
     $('select').material_select();
 });
