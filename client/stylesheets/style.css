@@ -11,6 +11,10 @@ main {
     flex: 1 0 auto;
 }
 
+small {
+    font-size: 50%;
+}
+
 .verse-panel {
     white-space: pre;
     min-height: 4em;
