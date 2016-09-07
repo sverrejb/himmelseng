@@ -1,18 +1,15 @@
-/**
- * Created by sverre on 28/08/16.
- */
 {
   "student_organizations": [
     {
       "name": "Online",
-      "id": 0
+      "id": 1230
     },
     {
       "name": "Abakus",
       "id": 1
     },
     {
-      "name": "A/F Smørekoppen",
+      "name": "AF Smørekoppen",
       "id": 2
     },
     {

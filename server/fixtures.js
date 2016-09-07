@@ -6,7 +6,15 @@ function makeFakeVerse() {
     return text
 }
 
-if (Organizations.find().count() === 0){
+if (Organizations.find().count() === 0) {
+    var data = JSON.parse(Assets.getText("student_organizations.json"))['student_organizations'];
+    data.forEach(function (item, index, array) {
+        console.log("inserting" + item);
+        Organizations.insert(item);
+    })
+}
+
+/*if (Organizations.find().count() === 0){
     Organizations.insert({
         name:"Online",
         id:0
@@ -16,7 +24,7 @@ if (Organizations.find().count() === 0){
         name:"Abakus",
         id:1
     })
-}
+}*/
 
 if (Verses.find().count() === 0) {
     Verses.insert({
