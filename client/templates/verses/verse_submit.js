@@ -16,6 +16,7 @@ Template.verseSubmit.events({
         }
         else {
             post._id = Verses.insert(post);
+            Meteor.call('sendEmail', post);
             target.title.value = '';
             target.text.value = '';
             target.metadata.value = '';
