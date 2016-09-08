@@ -4,7 +4,10 @@
 
 function getEnvEmails() {
     var addresses = process.env.ADMIN_EMAILS;
-    return addresses.split(",");
+    if (typeof(addresses) !== 'undefined') {
+        return addresses.split(",");
+    }
+    log("No admin emails set in env variable ADMIN_EMAILS");
 }
 
 Meteor.methods({
