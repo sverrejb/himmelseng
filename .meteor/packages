@@ -19,7 +19,6 @@ random@1.0.10
 iron:router
 sacha:spin
 anti:fake
-insecure@1.0.7
 aldeed:simple-schema
 materialize:materialize
 standard-minifier-css@1.1.8
