@@ -12,10 +12,10 @@ Template.verseSubmit.events({
 
         const lineBreakCount = (post.text.match(/\n/g) || []).length;
         if (lineBreakCount !== 3) {
-            Materialize.toast('husk fire linjer! ', 4000)
+            Materialize.toast('Husk fire linjer! ', 4000)
         }
         else {
-            post._id = Verses.insert(post);
+            Meteor.call('submitVerse', post);
             Meteor.call('sendEmail', post);
             target.title.value = '';
             target.text.value = '';

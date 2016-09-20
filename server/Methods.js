@@ -21,5 +21,9 @@ Meteor.methods({
             subject: "Nytt himmelsengvers",
             text: "Det har blitt lagt inn et nytt vers på himmelseng.no \nTittel: " + post.title + "\nTekst: " + post.text
         });
+    },
+    submitVerse: function (post) {
+        console.log("inserted");
+        Verses.insert(post);
     }
 });
