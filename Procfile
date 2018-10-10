@@ -1,0 +1,1 @@
+web: flask; flask translate compile; gunicorn microblog:app
