@@ -1,1 +1,1 @@
-web: flask; flask translate compile; gunicorn microblog:app
+web: flask; gunicorn himmelseng:app
