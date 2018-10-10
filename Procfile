@@ -1,1 +1,1 @@
-web: gunicorn himmelseng:app
+web: gunicorn -w 4 -b "0.0.0.0:$PORT" himmelseng:app
