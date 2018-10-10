@@ -1,8 +1,16 @@
 from flask import Flask
 from flask_restful import reqparse, abort, Api, Resource
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+
+from config import Config
 
 app = Flask(__name__)
 api = Api(app)
+
+app.config.from_object(Config)
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 VERSES = {
     1: {'tekst': 'Fylla fylla fylla fylla \n fylla fylla fylla \n fylla fylla fylla fylla fylla fylla fylla',
@@ -55,9 +63,8 @@ class VerseList(Resource):
         VERSES[verse_id] = {'tekst': args['tekst'], 'linjeforening': args['linjeforening']}
         return VERSES[verse_id], 201
 
-##
+
 ## API routing
-##
 api.add_resource(VerseList, '/verses')
 api.add_resource(Verse, '/verses/<int:verse_id>')
 
