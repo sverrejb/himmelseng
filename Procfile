@@ -1,1 +1,1 @@
-web: flask; gunicorn himmelseng:app
+web: gunicorn himmelseng:app
