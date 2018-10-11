@@ -66,7 +66,8 @@ class Verse(Resource):
 # shows all verses and lets you POST to add new verse
 class VerseList(Resource):
     def get(self):
-        return VERSES
+        all_verses = VerseEntry.query.all()
+        return jsonify([VerseEntry.as_dict(verse) for verse in all_verses])
 
     def post(self):
         verse = parser.parse_args()
