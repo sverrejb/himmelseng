@@ -67,7 +67,7 @@ class Verse(Resource):
 class VerseList(Resource):
     def get(self):
         all_verses = VerseEntry.query.all()
-        return jsonify([VerseEntry.as_dict(verse) for verse in all_verses])
+        return jsonify([VerseEntry.as_dict(verse) for verse in all_verses]), 200
 
     def post(self):
         verse = parser.parse_args()
