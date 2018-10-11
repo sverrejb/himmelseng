@@ -1,7 +1,6 @@
 FROM python:3
 
-ADD himmelseng.py .
-ADD requirements.txt .
+COPY . .
 RUN pip install -r requirements.txt
 
-CMD [ "python", "./himmelseng.py" ]
+CMD [ "gunicorn", "-w", "4", "-b", "0.0.0.0:8080", "himmelseng:app" ]
