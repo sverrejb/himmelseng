@@ -1,9 +1,11 @@
 import os
 import unittest
+import json
 
 from himmelseng import app, db
 
 TEST_DB = 'test.db'
+valid_entry = json.dumps({'text': 'foo', 'linjeforeining': 'bar'})
 
 
 class BasicTests(unittest.TestCase):
@@ -20,19 +22,22 @@ class BasicTests(unittest.TestCase):
         db.create_all()
 
 
-
     # executed after each test
     def tearDown(self):
         pass
 
     # tests
-    def test_main_page(self):
+    def test_ping(self):
         response = self.app.get('/api/verse', follow_redirects=True)
         self.assertEqual(response.status_code, 200)
 
     #TODO: Test insertion of verse
     def test_create(self):
-        pass
+        response = self.app.post('/api/verse',
+                                 data=valid_entry,
+                                 content_type='application/json')
+
+        self.assertEqual(response.status_code, 201)
 
     #TODO: Test read of verse
     def test_read(self):
