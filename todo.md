@@ -1,6 +1,6 @@
 # TODO:
 
-- Database
+- Restructuring
 - Auth
 - Production server
 - CDCI pipeline
