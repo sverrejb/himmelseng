@@ -65,8 +65,8 @@ class VerseList(Resource):
 
 
 ## API routing
-api.add_resource(VerseList, '/verses')
-api.add_resource(Verse, '/verses/<int:verse_id>')
+api.add_resource(VerseList, '/api/verse')
+api.add_resource(Verse, '/api/verse/<int:verse_id>')
 
 
 if __name__ == '__main__':
