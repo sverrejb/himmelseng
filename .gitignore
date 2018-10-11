@@ -1,3 +1,6 @@
 .idea
 mup.json
 settings.json
+__pycache__/
+app.db
+migrations/
