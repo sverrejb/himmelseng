@@ -1,7 +1,8 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_restful import reqparse, abort, Api, Resource
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+# from models import VerseEntry
 
 from config import Config
 
@@ -24,12 +25,23 @@ VERSES = {
 
 def abort_if_verse_doesnt_exist(verse_id):
     if verse_id not in VERSES:
-        abort(404, message="Todo {} doesn't exist".format(verse_id))
+        abort(404, message="Verse {} doesn't exist".format(verse_id))
 
 parser = reqparse.RequestParser()
-parser.add_argument('tekst')
+parser.add_argument('text')
 parser.add_argument('linjeforening')
 
+
+class VerseEntry(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.String(1024), index=True)
+    linjeforening = db.Column(db.String(64), index=True)
+
+    def __repr__(self):
+        return '{}'.format(self.text)
+
+    def as_dict(self):
+        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
 # Verse
 # show a single verse, delete a verse
@@ -45,7 +57,7 @@ class Verse(Resource):
 
     def put(self, verse_id):
         args = parser.parse_args()
-        verse = {'tekst': args['task']}
+        verse = {'text': args['text']}
         VERSES[verse_id] = verse
         return verse, 201
 
@@ -57,11 +69,11 @@ class VerseList(Resource):
         return VERSES
 
     def post(self):
-        args = parser.parse_args()
-        print(args)
-        verse_id = int(max(VERSES.keys())) + 1
-        VERSES[verse_id] = {'tekst': args['tekst'], 'linjeforening': args['linjeforening']}
-        return VERSES[verse_id], 201
+        verse = parser.parse_args()
+        verse = VerseEntry(**verse)
+        db.session.add(verse)
+        db.session.commit()
+        return verse.as_dict(), 201
 
 
 ## API routing

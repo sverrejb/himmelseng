@@ -1,6 +1,6 @@
-from app import db
+from himmelseng import db
 
-class Verse(db.Model):
+class VerseEntry(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(1024), index=True)
     linjeforening = db.Column(db.String(64), index=True)
