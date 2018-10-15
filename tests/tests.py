@@ -2,7 +2,8 @@ import os
 import unittest
 import json
 
-from himmelseng import app, db
+from himmelseng import app
+from app import db
 
 TEST_DB = 'test.db'
 valid_entry = json.dumps({'text': 'lorem ipsum', 'linjeforeining': 'dolor sit amet'})

@@ -1,4 +1,4 @@
-from himmelseng import db
+from app import db
 
 class VerseEntry(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -7,3 +7,6 @@ class VerseEntry(db.Model):
 
     def __repr__(self):
         return '{}'.format(self.text)
+
+    def as_dict(self):
+        return {c.name: getattr(self, c.name) for c in self.__table__.columns}

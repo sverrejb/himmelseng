@@ -1,7 +1,7 @@
 # TODO:
 
 - Restructuring
+- Prod database
 - Auth
-- Production server
 - CDCI pipeline
 - Frontend
