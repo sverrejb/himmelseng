@@ -10,7 +10,7 @@ Himmelseng.no ble laget i et forsøk på å samle og bevare de mange versene som
 * Installer virtualenv
 * Installer [virtualenvwrapper](http://virtualenvwrapper.readthedocs.io/en/latest/install.html) (Valgfritt, men anbefalt)
 * Opprett et virtualenv med python3: `mkvirtualenv --python=/usr/bin/python3 <navn på environment>` (path til python3 kan her variere med OS og oppsett)
-* Aktiver environmentet: workon `<navn på environment>`. For å deaktivere env: `deactivate`
+* Aktiver environmentet: `workon <navn på environment>`. For å deaktivere env: `deactivate`
 * Installer avhengigheter: `pip install -r requirements.txt`
 * Ved førstegangsoppsett: Sett opp miljøvariabel: `echo "export FLASK_APP=himmelseng.py" >> $VIRTUAL_ENV/bin/postactivate && workon <navn på environment>` (virtualenv må her reaktiveres for at dette skal tre i kraft)
 * Ved førstegangsoppsett: Sett opp lokal sqlitedatabase med: `flask db init && flask db migrate -m "init db" && flask db upgrade`
