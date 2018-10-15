@@ -20,6 +20,10 @@ class BasicTests(unittest.TestCase):
         self.app = app.test_client()
         db.drop_all()
         db.create_all()
+        self.app.post('/api/verse',
+                      data=valid_entry,
+                      content_type='application/json')
+
 
 
     # executed after each test
@@ -38,12 +42,12 @@ class BasicTests(unittest.TestCase):
         self.assertEqual(response.status_code, 201)
 
     def test_read(self):
-        response = self.app.get('/api/verse/3')
+        response = self.app.get('/api/verse/1')
         self.assertEqual(response.status_code, 200)
 
-    #TODO: Test deletion of verse
     def test_delete(self):
-        pass
+        response = self.app.delete('/api/verse/1')
+        self.assertEqual(response.status_code, 204)
 
 
 if __name__ == "__main__":

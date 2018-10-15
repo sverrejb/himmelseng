@@ -35,11 +35,13 @@ class VerseEntry(db.Model):
 class Verse(Resource):
     def get(self, verse_id):
         result = VerseEntry.query.get(verse_id)
-        if result return result.to_dict(), 200 else 404
+        return (result.as_dict(), 200) if result else ({} , 404)
 
 
     def delete(self, verse_id):
-        pass
+        VerseEntry.query.filter_by(id=verse_id).delete()
+        db.session.commit()
+        return {}, 204
 
     def put(self, verse_id):
         pass
