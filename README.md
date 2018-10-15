@@ -9,7 +9,7 @@ Himmelseng.no ble laget i et forsøk på å samle og bevare de mange versene som
 * Install python3 and pip
 * Install virtualenv
 * Install [virtualenvwrapper](http://virtualenvwrapper.readthedocs.io/en/latest/install.html) (Optional)
-* Create a virtualenv with python3: `mkvirtualenv --python=/usr/bin/python3 <name of environment>` (your path to python3 might be different)
+* Create a virtualenv with python3: `mkvirtualenv --python=$(which python3) <name of environment>
 * Activate environment: `workon <name of environment>`. To deactivate env: `deactivate`
 * Install dependencies: `pip install -r requirements.txt`
 * On first time setup: Sett envirionment variable: `echo "export FLASK_APP=himmelseng.py" >> $VIRTUAL_ENV/bin/postactivate && workon <navn på environment>` (virtualenv must be reactivated)
