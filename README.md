@@ -16,3 +16,11 @@ Himmelseng.no ble laget i et forsøk på å samle og bevare de mange versene som
 * On first time setup: Create local sqlite database: `flask db init && flask db migrate -m "init db" && flask db upgrade`
 * Start application with `flask run`
 * Run tests with `nose2`
+
+## TODOs:
+
+- Frontend
+- Auth
+- Prod database
+- CDCI pipeline
+
