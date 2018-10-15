@@ -14,8 +14,8 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 parser = reqparse.RequestParser()
-parser.add_argument('text')
-parser.add_argument('linjeforening')
+parser.add_argument('text', type=str, required=True)
+parser.add_argument('linjeforening', type=str)
 
 
 class VerseEntry(db.Model):
@@ -42,9 +42,6 @@ class Verse(Resource):
         VerseEntry.query.filter_by(id=verse_id).delete()
         db.session.commit()
         return {}, 204
-
-    def put(self, verse_id):
-        pass
 
 
 # VerseList

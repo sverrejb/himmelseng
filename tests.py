@@ -5,7 +5,8 @@ import json
 from himmelseng import app, db
 
 TEST_DB = 'test.db'
-valid_entry = json.dumps({'text': 'foo', 'linjeforeining': 'bar'})
+valid_entry = json.dumps({'text': 'lorem ipsum', 'linjeforeining': 'dolor sit amet'})
+invalid_entry = json.dumps({'foo': 'bar', 'baz': 'buzz'})
 
 
 class BasicTests(unittest.TestCase):
@@ -35,15 +36,25 @@ class BasicTests(unittest.TestCase):
         response = self.app.get('/api/verse', follow_redirects=True)
         self.assertEqual(response.status_code, 200)
 
-    def test_create(self):
+    def test_post(self):
         response = self.app.post('/api/verse',
                                  data=valid_entry,
                                  content_type='application/json')
         self.assertEqual(response.status_code, 201)
 
-    def test_read(self):
+    def test_post_invalid(self):
+        response = self.app.post('/api/verse',
+                                 data=invalid_entry,
+                                 content_type='application/json')
+        self.assertEqual(response.status_code, 400)
+
+    def test_get(self):
         response = self.app.get('/api/verse/1')
         self.assertEqual(response.status_code, 200)
+
+    def test_get_404(self):
+        response = self.app.get('/api/verse/99')
+        self.assertEqual(response.status_code, 404)
 
     def test_delete(self):
         response = self.app.delete('/api/verse/1')
