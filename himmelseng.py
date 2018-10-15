@@ -13,20 +13,6 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-VERSES = {
-    1: {'tekst': 'Fylla fylla fylla fylla \n fylla fylla fylla \n fylla fylla fylla fylla fylla fylla fylla',
-        'linjeforening': 'Online'},
-    2: {'tekst': 'Lorem ipsum',
-        'linjeforening': 'Abakus'},
-    3: {'tekst': 'Dolor sit amet',
-        'linjeforening': 'Delta'},
-}
-
-
-def abort_if_verse_doesnt_exist(verse_id):
-    if verse_id not in VERSES:
-        abort(404, message="Verse {} doesn't exist".format(verse_id))
-
 parser = reqparse.RequestParser()
 parser.add_argument('text')
 parser.add_argument('linjeforening')
@@ -43,23 +29,20 @@ class VerseEntry(db.Model):
     def as_dict(self):
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
 
+
 # Verse
 # show a single verse, delete a verse
 class Verse(Resource):
     def get(self, verse_id):
-        abort_if_verse_doesnt_exist(verse_id)
-        return VERSES[verse_id]
+        result = VerseEntry.query.get(verse_id)
+        if result return result.to_dict(), 200 else 404
+
 
     def delete(self, verse_id):
-        abort_if_verse_doesnt_exist(verse_id)
-        del VERSES[verse_id]
-        return '', 204
+        pass
 
     def put(self, verse_id):
-        args = parser.parse_args()
-        verse = {'text': args['text']}
-        VERSES[verse_id] = verse
-        return verse, 201
+        pass
 
 
 # VerseList

@@ -31,17 +31,15 @@ class BasicTests(unittest.TestCase):
         response = self.app.get('/api/verse', follow_redirects=True)
         self.assertEqual(response.status_code, 200)
 
-    #TODO: Test insertion of verse
     def test_create(self):
         response = self.app.post('/api/verse',
                                  data=valid_entry,
                                  content_type='application/json')
-
         self.assertEqual(response.status_code, 201)
 
-    #TODO: Test read of verse
     def test_read(self):
-        pass
+        response = self.app.get('/api/verse/3')
+        self.assertEqual(response.status_code, 200)
 
     #TODO: Test deletion of verse
     def test_delete(self):
