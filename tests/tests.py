@@ -27,7 +27,6 @@ class BasicTests(unittest.TestCase):
                       content_type='application/json')
 
 
-
     # executed after each test
     def tearDown(self):
         pass
@@ -56,6 +55,10 @@ class BasicTests(unittest.TestCase):
     def test_get_404(self):
         response = self.app.get('/api/verse/99')
         self.assertEqual(response.status_code, 404)
+
+    def test_random(self):
+        response = self.app.get('/api/verse/random')
+        self.assertEqual(response.status_code, 200)
 
     def test_delete(self):
         response = self.app.delete('/api/verse/1')
