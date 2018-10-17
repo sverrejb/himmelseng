@@ -1,4 +1,4 @@
-# Himmelseng 🛏
+# Himmelseng 🌌🛏
 Jeg ønsker meg en himmelseng ...
 
 Himmelseng er en sang som synges i godt lag av studentene i Trondheim. Opphavet til sangen er ukjent, men den ser opprinnelig ut til å komme fra Danmark.
