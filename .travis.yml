@@ -9,9 +9,3 @@ before_install:
 - docker build -t himmelseng .
 
 script: nose2
-
-stages:
-  - name: deploy
-    # require the branch name to be master (note for PRs this is the base branch name)
-    if: branch = V2_Backend
-    script: echo foo
