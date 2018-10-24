@@ -5,3 +5,5 @@ __pycache__/
 app.db
 migrations/
 test.db
+deploy_key
+deploy_key.pub
