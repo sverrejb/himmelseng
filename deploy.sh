@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-echo foo
+docker-compose down
+docker-compose pull
+docker-compose up -d
