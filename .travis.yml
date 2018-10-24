@@ -14,3 +14,8 @@ before_deploy:
 - docker build -t himmelseng .
 - docker tag himmelseng:latest $DOCKER_HUB_USERNAME/himmelseng:production
 - docker push $DOCKER_HUB_USERNAME/himmelseng:production
+deploy:
+  provider: script
+  script: bash deploy.sh
+  on:
+    branch: V2_Backend
