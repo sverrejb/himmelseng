@@ -8,9 +8,9 @@ env:
   - secure: cQqUWzBR4vioXRC+4ExFdzgolw6qy0+rqTAXdNlyuo+7RkvhIx7sxepGOk/4iZvec9cKtLzf6rzIS7Gy2NVVQzkEEpphBvepM4aywUzVLRB03SUjQpGegI6ug4ZDkB/Wilv9PG6yORLmzYx0/tDi7p9nXxhnwQFaWY2xXdvH/dgxgoWa/44BsL5WuTmaj0ypY0ClaZJaNHtqDtvUF6VQHnx4/yxp1J3L/668/wYLERJJsWfb7f7ywiE3ZmwtkQjfNK9zxDq6ccnjL/uKAnFh5rhzbRCp51Or+/DOtihFi/dCaM1+1J1GP9KmYRrlS6eXqxUF8MeMSGAfGyLJ26hU3Gu7o2qgtTr15muvkgMjtwdkDNb+ftgkWh5BJaWN+VZal+uX5kguPbIQe4Hg8obvPEhxd5FUXieBcInmaoI5PFfi/QCmM5WgQDc+7v5E1v7jz8HKNemI+5RfwULe5yIfb2DePtGR87sJy6VClJ7WgYBCEW9+KNSYoTVgnJmpjawbzR9+j2OEsPhf18QPevaXknzujcAAVPr+DXFiMt5KNznLFqaJQLqSbDPIwKzrcgSGufK1OeqjaEEQfGLvKHgVx8YGNeR36uUyib3BVJL5fgur2zQSWZ+yJMqmUseihnMVKR7uMnI9gQbCC2F6d97aNGqQcwK1QBiisZCXwXR3nrQ=
 services:
 - docker
-before_install:
+script: nose2
+before_deploy:
 - docker login --username=$DOCKER_HUB_USERNAME --password=$DOCKER_HUB_PASSWORD
 - docker build -t himmelseng .
 - docker tag himmelseng:latest $DOCKER_HUB_USERNAME/himmelseng:production
 - docker push $DOCKER_HUB_USERNAME/himmelseng:production
-script: nose2
