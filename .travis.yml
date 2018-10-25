@@ -14,8 +14,9 @@ before_deploy:
 - docker build -t himmelseng .
 - docker tag himmelseng:latest $DOCKER_HUB_USERNAME/himmelseng:production
 - docker push $DOCKER_HUB_USERNAME/himmelseng:production
-- openssl aes-256-cbc -K $encrypted_72d0b9165235_key -iv $encrypted_72d0b9165235_iv
+- openssl aes-256-cbc -K $encrypted_76bf4cc37491_key -iv $encrypted_76bf4cc37491_iv
   -in deploy_key.enc -out ./deploy_key -d
+
 deploy:
   provider: script
   skip_cleanup: true
@@ -23,6 +24,4 @@ deploy:
     ./deploy.sh
   on:
     branch: V2_Backend
-before_install:
-- openssl aes-256-cbc -K $encrypted_76bf4cc37491_key -iv $encrypted_76bf4cc37491_iv
-  -in deploy_key.enc -out ./deploy_key -d
+
