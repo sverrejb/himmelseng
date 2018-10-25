@@ -17,10 +17,15 @@ Himmelseng.no ble laget i et forsøk på å samle og bevare de mange versene som
 * Start application with `flask run`
 * Run tests with `nose2`
 
+## CICD Pipeline
+All branches are tested on Travis. On the master branch, a docker image is built and pushed to hub.docker.com, before deploy.sh is run on the server via ssh.
+
+### Setup on a new server
+TODO
+
 ## TODOs:
 
+- Database
 - Frontend
 - Auth
-- Prod database
-- CDCI pipeline
 
