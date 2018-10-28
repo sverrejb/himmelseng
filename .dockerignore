@@ -7,3 +7,4 @@ deploy_key.pub
 migrations
 test.db
 tests
+docker-compose.yml
