@@ -5,4 +5,4 @@ services:
     ports:
       - 80:80
     volumes:
-      - /root/app.db:/app.db
+      - /root/app.db:/app/app.db
