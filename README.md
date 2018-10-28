@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/sverrejb/himmelseng.svg?branch=V2_Backend)](https://travis-ci.org/sverrejb/himmelseng)
 # Himmelseng 🌌🛏
 Jeg ønsker meg en himmelseng ...
 
