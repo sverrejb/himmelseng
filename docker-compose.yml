@@ -1,8 +1,8 @@
 version: '2'
 services:
- app:
-   image: sverrejohann/himmelseng:production
-   ports:
-     - 80:80
-     volumes:
+  app:
+    image: sverrejohann/himmelseng:production
+    ports:
+      - 80:80
+    volumes:
       - /root/app.db:/app.db
