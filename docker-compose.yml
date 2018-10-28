@@ -4,3 +4,5 @@ services:
    image: sverrejohann/himmelseng:production
    ports:
      - 80:80
+     volumes:
+      - /root/app.db:/app.db
