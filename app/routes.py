@@ -22,7 +22,7 @@ def get_password(username):
 def unauthorized():
     # return 403 instead of 401 to prevent browsers from displaying the default
     # auth dialog
-    return jsonify({'message': 'Unauthorized access'}), 403
+    return jsonify({'message': 'Unauthorized access'}), 401
 
 
 # Verse

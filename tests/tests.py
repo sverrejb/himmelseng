@@ -1,17 +1,20 @@
+import base64
+import json
 import os
 import unittest
-import json
 
-from himmelseng import app
 from app import db
+from himmelseng import app
+from base64 import b64encode
 
 TEST_DB = 'test.db'
 valid_entry = json.dumps({'text': 'lorem ipsum', 'linjeforeining': 'dolor sit amet'})
 invalid_entry = json.dumps({'foo': 'bar', 'baz': 'buzz'})
+auth_header = {'Authorization': 'Basic ' + b64encode(
+    bytes('{0}:{1}'.format(app.config['ADMIN_USER'], app.config['ADMIN_PASSWORD']), 'ascii')).decode('ascii')}
 
 
 class BasicTests(unittest.TestCase):
-
     # executed prior to each test
     def setUp(self):
         app.config['TESTING'] = True
@@ -25,7 +28,6 @@ class BasicTests(unittest.TestCase):
         self.app.post('/api/verse',
                       data=valid_entry,
                       content_type='application/json')
-
 
     # executed after each test
     def tearDown(self):
@@ -61,8 +63,12 @@ class BasicTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_delete(self):
-        response = self.app.delete('/api/verse/1')
+        response = self.app.delete('/api/verse/1', headers = auth_header)
         self.assertEqual(response.status_code, 204)
+
+    def test_delete_no_auth(self):
+        response = self.app.delete('/api/verse/1')
+        self.assertEqual(response.status_code, 401)
 
 
 if __name__ == "__main__":
