@@ -7,3 +7,6 @@ services:
     volumes:
       - /root/app.db:/app/app.db
     restart: always
+    environment:
+      - ADMIN_USER
+      - ADMIN_PASSWORD
