@@ -6,3 +6,4 @@ services:
       - 80:80
     volumes:
       - /root/app.db:/app/app.db
+    restart: always

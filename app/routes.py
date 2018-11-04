@@ -1,12 +1,28 @@
 from flask_restful import Resource, reqparse
+from flask_httpauth import HTTPBasicAuth
 import random
 from flask import jsonify
 from app.models import VerseEntry
-from app import db, api
+from app import db, api, app
 
 parser = reqparse.RequestParser()
 parser.add_argument('text', type=str, required=True)
 parser.add_argument('linjeforening', type=str)
+
+auth = HTTPBasicAuth()
+
+@auth.get_password
+def get_password(username):
+    if username == app.config['ADMIN_USER']:
+        return app.config['ADMIN_PASSWORD']
+    return None
+
+
+@auth.error_handler
+def unauthorized():
+    # return 403 instead of 401 to prevent browsers from displaying the default
+    # auth dialog
+    return jsonify({'message': 'Unauthorized access'}), 403
 
 
 # Verse
@@ -16,11 +32,13 @@ class Verse(Resource):
         result = VerseEntry.query.get(verse_id)
         return (result.as_dict(), 200) if result else ({} , 404)
 
+class DeleteVerse(Resource):
+    decorators = [auth.login_required]
+
     def delete(self, verse_id):
         VerseEntry.query.filter_by(id=verse_id).delete()
         db.session.commit()
         return {}, 204
-
 
 class RandomVerse(Resource):
     def get(self):
@@ -46,5 +64,6 @@ class VerseList(Resource):
 
 # API routing
 api.add_resource(VerseList, '/api/verse')
+api.add_resource(DeleteVerse, '/api/verse/<int:verse_id>')
 api.add_resource(Verse, '/api/verse/<int:verse_id>')
 api.add_resource(RandomVerse, '/api/verse/random')
