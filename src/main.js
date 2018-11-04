@@ -3,6 +3,7 @@ import Vue from 'vue'
 import './plugins/vuetify'
 import App from './App.vue'
 import router from './router'
+import axios from 'axios'
 
 Vue.config.productionTip = false
 
@@ -60,6 +61,15 @@ const store = {
         }
     ]
 };
+
+axios.get("http://beta.himmelseng.no/api/verse")
+    .then((response) => {
+        console.log(response.data)
+        store.verses = response.data;
+    })
+    .catch((e) => {
+        console.error(e);
+    });
 
 export { store };
 
