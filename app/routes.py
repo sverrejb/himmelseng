@@ -26,15 +26,15 @@ def unauthorized():
 
 
 # Verse
-# show a single verse, delete a verse
+# show a single verse
 class Verse(Resource):
     def get(self, verse_id):
         result = VerseEntry.query.get(verse_id)
         return (result.as_dict(), 200) if result else ({} , 404)
 
+# delete a verse
 class DeleteVerse(Resource):
     decorators = [auth.login_required]
-
     def delete(self, verse_id):
         VerseEntry.query.filter_by(id=verse_id).delete()
         db.session.commit()
