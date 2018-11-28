@@ -6,7 +6,8 @@ Himmelseng er en sang som synges i godt lag av studentene i Trondheim. Opphavet 
 Sangen har et start- og et sluttvers, og innimellom der kommer vers av forskjellig art. Disse følger som regel et mønster med fire linjer, der andre og fjerde linje rimer.
 Himmelseng.no ble laget i et forsøk på å samle og bevare de mange versene som finnest i studentmiljøet i Trondheim, samt være til hjelp når sangen synges.
 
-## Development
+## Backend
+### Development
 * Install python3 and pip
 * Install virtualenv
 * Install [virtualenvwrapper](http://virtualenvwrapper.readthedocs.io/en/latest/install.html) (Optional)
@@ -18,8 +19,30 @@ Himmelseng.no ble laget i et forsøk på å samle og bevare de mange versene som
 * Start application with `flask run`
 * Run tests with `nose2`
 
+## Frontend
+### Project setup
+```
+yarn install
+```
+
+#### Compiles and hot-reloads for development
+```
+yarn run serve
+```
+
+#### Compiles and minifies for production
+```
+yarn run build
+```
+
+#### Lints and fixes files
+```
+yarn run lint
+```
+
+
 ## CICD Pipeline
-All branches are tested on Travis. On the master branch, a docker image is built and pushed to hub.docker.com, before deploy.sh is run on the server via ssh.
+All branches are built and tested on Travis. On the master branch, a docker image is built and pushed to hub.docker.com, before deploy.sh is run on the server via ssh.
 
 ### Setup on a new server
 TODO
@@ -29,4 +52,3 @@ TODO
 - Database
 - Frontend
 - Auth
-
