@@ -60,7 +60,7 @@ def index():
 @app.route('/<path:path>', methods=['GET'])
 def serve_static_files(path):
  
-    if not os.path.isfile(os.path.join(static_file_dir, path)):
+    if not os.path.isfile(os.path.join('../../dist', path)):
         path = os.path.join(path, 'index.html')
  
-    return send_from_directory(static_file_dir, path)
+    return send_from_directory('../../dist', path)
