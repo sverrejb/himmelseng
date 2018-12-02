@@ -4,12 +4,12 @@ from flask_basicauth import BasicAuth
 from flask_expects_json import expects_json
 from app import app
 
-DIST_FOLDER = '../dist/'
+STATIC_ROOT = '../dist/'
 NOT_FOUND = ("404", 404)
 
 @app.route('/')
 def index():
-    return send_from_directory(DIST_FOLDER, 'index.html')
+    return send_from_directory(STATIC_ROOT, 'index.html')
 
 
 @app.route('/<path:path>', methods=['GET'])
@@ -21,7 +21,7 @@ def serve_static_files(path):
         folder = ''
         file_ = path
  
-    if not os.path.isfile(os.path.join(DIST_FOLDER + folder, file_)):
+    if not os.path.isfile(os.path.join(STATIC_ROOT + folder, file_)):
         return NOT_FOUND
  
-    return send_from_directory(DIST_FOLDER + folder, file_)
+    return send_from_directory(STATIC_ROOT + folder, file_)
