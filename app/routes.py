@@ -2,8 +2,7 @@ import os
 from flask import send_from_directory, jsonify
 from flask_basicauth import BasicAuth
 from flask_expects_json import expects_json
-from app import db, app
-from app.models import VerseEntry
+from app import app
 
 DIST_FOLDER = '../dist/'
 NOT_FOUND = ("404", 404)
