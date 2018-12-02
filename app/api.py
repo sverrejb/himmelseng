@@ -7,7 +7,7 @@ from app.models import VerseEntry
 
 
 auth = BasicAuth(app)
-schema = {
+verse_schema = {
     'type': 'object',
     'properties': {
         'text': {'type': 'string'},
@@ -38,14 +38,13 @@ def get_random_verse():
     return jsonify(random_verse.as_dict()), 200
 
 
-
 @app.route('/api/verse', methods=['GET'])
 def get_all_verses():
     all_verses = VerseEntry.query.all()
     return jsonify([VerseEntry.as_dict(verse) for verse in all_verses])
 
 @app.route('/api/verse', methods=['POST'])
-@expects_json(schema)
+@expects_json(verse_schema)
 def post_verse():
     verse = VerseEntry(**request.json)
     db.session.add(verse)
