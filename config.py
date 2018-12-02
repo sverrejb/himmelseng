@@ -6,5 +6,5 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     BASEDIR='..'
-    ADMIN_USER = os.environ.get('ADMIN_USER') or 'admin'
-    ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD') or 'sudankjeks'
+    BASIC_AUTH_USERNAME = os.environ.get('ADMIN_USER') or 'admin'
+    BASIC_AUTH_PASSWORD = os.environ.get('ADMIN_PASSWORD') or 'sudankjeks'

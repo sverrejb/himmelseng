@@ -8,10 +8,10 @@ from himmelseng import app
 from base64 import b64encode
 
 TEST_DB = 'test.db'
-valid_entry = json.dumps({'text': 'lorem ipsum', 'linjeforeining': 'dolor sit amet'})
+valid_entry = json.dumps({'text': 'lorem ipsum', 'linjeforening': 'dolor sit amet'})
 invalid_entry = json.dumps({'foo': 'bar', 'baz': 'buzz'})
 auth_header = {'Authorization': 'Basic ' + b64encode(
-    bytes('{0}:{1}'.format(app.config['ADMIN_USER'], app.config['ADMIN_PASSWORD']), 'ascii')).decode('ascii')}
+    bytes('{0}:{1}'.format(app.config['BASIC_AUTH_USERNAME'], app.config['BASIC_AUTH_PASSWORD']), 'ascii')).decode('ascii')}
 
 
 class BasicTests(unittest.TestCase):

@@ -1,69 +1,66 @@
-from flask_restful import Resource, reqparse
-from flask_httpauth import HTTPBasicAuth
 import random
-from flask import jsonify
+from flask import request, jsonify, send_from_directory
+from flask_basicauth import BasicAuth
+from flask_expects_json import expects_json
+from app import db, app
 from app.models import VerseEntry
-from app import db, api, app
-
-parser = reqparse.RequestParser()
-parser.add_argument('text', type=str, required=True)
-parser.add_argument('linjeforening', type=str)
-
-auth = HTTPBasicAuth()
-
-@auth.get_password
-def get_password(username):
-    if username == app.config['ADMIN_USER']:
-        return app.config['ADMIN_PASSWORD']
-    return None
 
 
-@auth.error_handler
-def unauthorized():
-    # return 403 instead of 401 to prevent browsers from displaying the default
-    # auth dialog
-    return jsonify({'message': 'Unauthorized access'}), 401
+auth = BasicAuth(app)
+schema = {
+    'type': 'object',
+    'properties': {
+        'text': {'type': 'string'},
+        'linjeforening': {'type': 'string'}
+    },
+    'required': ['text']
+}
 
 
-# Verse
-# show a single verse
-class Verse(Resource):
-    def get(self, verse_id):
-        result = VerseEntry.query.get(verse_id)
-        return (result.as_dict(), 200) if result else ({} , 404)
-
-# delete a verse
-class DeleteVerse(Resource):
-    decorators = [auth.login_required]
-    def delete(self, verse_id):
-        VerseEntry.query.filter_by(id=verse_id).delete()
-        db.session.commit()
-        return {}, 204
-
-class RandomVerse(Resource):
-    def get(self):
-        random_id = random.randrange(0, db.session.query(VerseEntry).count())
-        random_verse = db.session.query(VerseEntry)[random_id]
-        return random_verse.as_dict(), 200
+@app.route('/api/verse/<verse_id>', methods=['GET'])
+def get_verse(verse_id):
+    result = VerseEntry.query.get(verse_id)
+    return (jsonify(result.as_dict()), 200) if result else (jsonify({}) , 404)
 
 
-# VerseList
-# shows all verses and lets you POST to add new verse
-class VerseList(Resource):
-    def get(self):
-        all_verses = VerseEntry.query.all()
-        return jsonify([VerseEntry.as_dict(verse) for verse in all_verses])
-
-    def post(self):
-        verse = parser.parse_args()
-        verse = VerseEntry(**verse)
-        db.session.add(verse)
-        db.session.commit()
-        return verse.as_dict(), 201
+@app.route('/api/verse/<verse_id>', methods=['DELETE'])
+@auth.required
+def delete_verse(verse_id):
+    VerseEntry.query.filter_by(id=verse_id).delete()
+    db.session.commit()
+    return jsonify({}), 204
 
 
-# API routing
-api.add_resource(VerseList, '/api/verse')
-api.add_resource(DeleteVerse, '/api/verse/<int:verse_id>')
-api.add_resource(Verse, '/api/verse/<int:verse_id>')
-api.add_resource(RandomVerse, '/api/verse/random')
+@app.route('/api/verse/random', methods=['GET'])
+def get_random_verse():
+    random_id = random.randrange(0, db.session.query(VerseEntry).count())
+    random_verse = db.session.query(VerseEntry)[random_id]
+    return jsonify(random_verse.as_dict()), 200
+
+
+
+@app.route('/api/verse', methods=['GET'])
+def get_all_verses():
+    all_verses = VerseEntry.query.all()
+    return jsonify([VerseEntry.as_dict(verse) for verse in all_verses])
+
+@app.route('/api/verse', methods=['POST'])
+@expects_json(schema)
+def post_verse():
+    verse = VerseEntry(**request.json)
+    db.session.add(verse)
+    db.session.commit()
+    return jsonify(verse.as_dict()), 201
+
+@app.route('/')
+def index():
+    return send_from_directory('../dist/', 'index.html')
+
+
+@app.route('/<path:path>', methods=['GET'])
+def serve_static_files(path):
+ 
+    if not os.path.isfile(os.path.join(static_file_dir, path)):
+        path = os.path.join(path, 'index.html')
+ 
+    return send_from_directory(static_file_dir, path)

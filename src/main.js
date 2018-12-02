@@ -62,7 +62,7 @@ const store = {
     ]
 };
 
-axios.get("http://beta.himmelseng.no/api/verse")
+axios.get("http://localhost:5000/api/verse")
     .then((response) => {
         console.log(response.data)
         store.verses = response.data;
