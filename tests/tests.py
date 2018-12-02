@@ -15,7 +15,6 @@ auth_header = {'Authorization': 'Basic ' + b64encode(
 
 
 class BasicTests(unittest.TestCase):
-    # executed prior to each test
     def setUp(self):
         app.config['TESTING'] = True
         app.config['WTF_CSRF_ENABLED'] = False
@@ -29,11 +28,9 @@ class BasicTests(unittest.TestCase):
                       data=valid_entry,
                       content_type='application/json')
 
-    # executed after each test
     def tearDown(self):
         pass
 
-    # tests
     def test_ping(self):
         response = self.app.get('/api/verse', follow_redirects=True)
         self.assertEqual(response.status_code, 200)
