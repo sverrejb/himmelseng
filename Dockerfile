@@ -3,7 +3,7 @@ COPY . .
 RUN yarn install
 RUN yarn build
 
-FROM python:3.6
+FROM tiangolo/uwsgi-nginx:python3.7
 
 WORKDIR app
 
