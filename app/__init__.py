@@ -12,4 +12,3 @@ migrate = Migrate(app, db)
 
 # import at bottom to prevent circular imports
 from app import api
-from app import routes

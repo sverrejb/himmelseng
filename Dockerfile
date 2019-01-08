@@ -5,7 +5,7 @@ RUN yarn build
 
 FROM tiangolo/uwsgi-nginx:python3.7
 
-WORKDIR app
+WORKDIR /hms
 
 COPY --from=builder dist dist
 
