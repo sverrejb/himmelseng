@@ -2,17 +2,18 @@
 FROM node as builder
 WORKDIR /app
 COPY package.json yarn.lock babel.config.js ./
+RUN yarn install
 COPY src src/
 COPY public public/
-RUN yarn install
 RUN yarn build
 
 # Production image
 FROM tiangolo/uwsgi-nginx:python3.7
 WORKDIR /hms
-COPY --from=builder /app/dist dist
-COPY *.py requirements.txt startup.sh ./
-COPY app app/
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY requirements.txt ./
 RUN pip install -r requirements.txt
+COPY --from=builder /app/dist dist
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY *.py startup.sh ./
+COPY app app/
 CMD ["./startup.sh"]
