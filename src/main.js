@@ -62,7 +62,7 @@ const store = {
     ]
 };
 
-axios.get("http://localhost:5000/api/verse")
+axios.get("/api/verse")
     .then((response) => {
         console.log(response.data)
         store.verses = response.data;
