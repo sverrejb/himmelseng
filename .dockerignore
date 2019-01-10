@@ -1,9 +1,6 @@
 Dockerfile
 README.md
-deploy.sh
-deploy_key
-deploy_key.enc
-deploy_key.pub
+deploy*
 migrations
 test.db
 tests

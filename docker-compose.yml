@@ -5,7 +5,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - /root/app.db:/app/app.db
+      - /root/app.db:/hms/app.db
     restart: always
     environment:
       - ADMIN_USER

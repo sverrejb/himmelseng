@@ -11,7 +11,8 @@ RUN yarn build
 FROM tiangolo/uwsgi-nginx:python3.7
 WORKDIR /hms
 COPY --from=builder /app/dist dist
-COPY . .
+COPY *.py requirements.txt startup.sh ./
+COPY app app/
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 RUN pip install -r requirements.txt
 CMD ["./startup.sh"]
