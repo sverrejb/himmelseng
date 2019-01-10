@@ -62,7 +62,7 @@ const store = {
     ]
 };
 
-axios.get("/api/verse")
+axios.get(process.env.VUE_APP_API_PATH + "/api/verse")
     .then((response) => {
         console.log(response.data)
         store.verses = response.data;
@@ -72,6 +72,8 @@ axios.get("/api/verse")
     });
 
 export { store };
+
+console.log(process.env.NODE_ENV)
 
 new Vue({
   router,
