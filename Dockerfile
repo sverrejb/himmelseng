@@ -2,9 +2,9 @@
 FROM node as builder
 WORKDIR /app
 COPY package.json yarn.lock babel.config.js ./
-RUN yarn install
 COPY src src/
 COPY public public/
+RUN yarn install
 RUN yarn build
 
 # Production image
