@@ -62,7 +62,9 @@ const store = {
     ]
 };
 
-axios.get(process.env.VUE_APP_API_PATH + "/api/verse")
+const apiPath = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/api' : '/api'
+
+axios.get(`${apiPath}/verse`)
     .then((response) => {
         console.log(response.data)
         store.verses = response.data;
@@ -71,7 +73,7 @@ axios.get(process.env.VUE_APP_API_PATH + "/api/verse")
         console.error(e);
     });
 
-export { store };
+export { store, apiPath };
 
 console.log(process.env.NODE_ENV)
 
