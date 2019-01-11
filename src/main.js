@@ -63,10 +63,8 @@ const store = {
 };
 
 const apiPath = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/api' : '/api'
-
 axios.get(`${apiPath}/verse`)
     .then((response) => {
-        console.log(response.data)
         store.verses = response.data;
     })
     .catch((e) => {
@@ -74,9 +72,6 @@ axios.get(`${apiPath}/verse`)
     });
 
 export { store, apiPath };
-
-console.log(process.env.NODE_ENV)
-
 new Vue({
   router,
   data: store,
