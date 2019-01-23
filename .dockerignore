@@ -1,0 +1,7 @@
+Dockerfile
+README.md
+deploy*
+migrations
+test.db
+tests
+docker-compose.yml
