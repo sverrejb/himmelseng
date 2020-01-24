@@ -30,4 +30,17 @@
 <main>
 	<h1>Himmelseng</h1>
 	<Verse rverse={txt} />
+	<form netlify>
+        <div>
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" required>
+        </div>
+        <div>
+            <label for="verse">Verse: </label>
+            <input type="text" name="verse" id="verse" required>
+        </div>
+        <div>
+            <input type="submit" value="Submit!">
+        </div>
+    </form>
 </main>
