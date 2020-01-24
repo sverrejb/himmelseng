@@ -58,7 +58,7 @@ exports.handler = async (event) => {
         allowedTags: [],
         allowedAttributes: {},
       });
-    const buff = new Buffer(clean_data);
+    const buff = new Buffer.from(clean_data);
     const file_data = buff.toString('base64');
     const file_name = `verse_${branch_name}`;
     const commit_url = `${github_api_url}/repos/${USER}/${REPO}/contents/verses/${file_name}.txt`
