@@ -7,7 +7,7 @@ exports.handler = async (event) => {
     const REPO = 'himmelseng';
     const USER = 'sverrejb';
     const PUBLISH_BRANCH = 'v3';
-    const MODERATION = false;
+    const MODERATION = true;
     const github_api_url = 'https://api.github.com'
     const github_headers = {
         'User-Agent': USER,
@@ -29,7 +29,6 @@ exports.handler = async (event) => {
     }
 
     const ref_uri = `${github_api_url}/repos/${USER}/${REPO}/git/refs/heads/${PUBLISH_BRANCH}`
-    console.log(ref_uri)
     const ref_response = await axios.get(ref_uri, { 'headers': github_headers })
         .catch((err) => {
             console.log(err.message)
