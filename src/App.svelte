@@ -30,7 +30,7 @@
 <main>
 	<h1>Himmelseng</h1>
 	<Verse rverse={txt} />
-	<form netlify>
+	<form method="post" action=".netlify/functions/submit">
         <div>
             <label for="name">Name: </label>
             <input type="text" name="name" id="name" required>
