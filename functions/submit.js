@@ -15,9 +15,11 @@ exports.handler = async (event) => {
         'Authorization': `token ${GITHUB_API_KEY}`
     }
 
+    console.log(event)
+
     let SUBMIT_EVENT_BODY;
     if (process.env.AWS_LAMBDA_FUNCTION_VERSION) {
-        SUBMIT_EVENT_BODY = JSON.parse(event.body).payload.data
+        SUBMIT_EVENT_BODY = JSON.parse(event.body)
     }
     else {
         SUBMIT_EVENT_BODY = {
@@ -27,6 +29,7 @@ exports.handler = async (event) => {
     }
 
     const ref_uri = `${github_api_url}/repos/${USER}/${REPO}/git/refs/heads/${PUBLISH_BRANCH}`
+    console.log(ref_uri)
     const ref_response = await axios.get(ref_uri, { 'headers': github_headers })
         .catch((err) => {
             console.log(err.message)
