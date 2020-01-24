@@ -4,7 +4,8 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public"
+    "start": "sirv public",
+    "build:lambda": "netlify-lambda build /functions"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
@@ -14,7 +15,8 @@
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^5.1.2",
-    "svelte": "^3.0.0"
+    "svelte": "^3.0.0",
+    "netlify-lambda": "^0.4.0"
   },
   "dependencies": {
     "sirv-cli": "^0.4.4"
