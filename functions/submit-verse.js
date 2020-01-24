@@ -60,11 +60,11 @@ exports.handler = async (event) => {
       });
     const buff = new Buffer(clean_data);
     const file_data = buff.toString('base64');
-    const file_name = `comment_${branch_name}`;
-    const commit_url = `${github_api_url}/repos/${USER}/${REPO}/contents/comments/${file_name}.txt`
+    const file_name = `verse_${branch_name}`;
+    const commit_url = `${github_api_url}/repos/${USER}/${REPO}/contents/verses/${file_name}.txt`
 
     const commit_data = {
-        message: "Added new comment",
+        message: "Added new verse",
         committer: {
             name: "Monalisa Octocat",
             email: "octocat@github.com"
@@ -84,7 +84,7 @@ exports.handler = async (event) => {
 
     const pullrequest_url = `${github_api_url}/repos/${USER}/${REPO}/pulls`
     const pullrequest_data = {
-        title: `New comment added by ${SUBMIT_EVENT_BODY.name}`,
+        title: `New verse added: ${SUBMIT_EVENT_BODY.name}`,
         body: SUBMIT_EVENT_BODY.comment,
         head: branch_name,
         base: PUBLISH_BRANCH,
