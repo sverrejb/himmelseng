@@ -16,8 +16,7 @@
       },
       body: JSON.stringify({ 'name': name, 'verse': verse })
     });
-	const data = await response.json();
-	console.log(data)
+	console.log(response)
   }
 </script>
 
