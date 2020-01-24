@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0723136a-86d5-4820-80f4-30e1ade24b17/deploy-status)](https://app.netlify.com/sites/kind-kalam-2b8249/deploys)
 # Himmelseng 🌌🛏
 Jeg ønsker meg en himmelseng ...
 
