@@ -1,9 +1,7 @@
 <script>
-  import Verse from "./Verse.svelte";
-  import VerseForm from './VerseForm.svelte';
-  import verses from "./verses-fixture.json";
-  export const title = "foo";
-  export const txt = verses[Math.floor(Math.random() * verses.length)].text;
+  import AllVerses from "./AllVerses.svelte";
+  import VerseForm from "./VerseForm.svelte";
+  import RandomVerse from "./RandomVerse.svelte";
 </script>
 
 <style>
@@ -28,8 +26,9 @@
   }
 </style>
 
+<h1>Himmelseng</h1>
 <main>
-  <h1>Himmelseng</h1>
-  <Verse rverse={txt} />
-  <VerseForm/>
+  <RandomVerse />
+  <VerseForm />
+  <AllVerses />
 </main>
