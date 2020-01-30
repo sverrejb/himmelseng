@@ -26,9 +26,16 @@
   }
 </style>
 
-<h1>Himmelseng</h1>
+<header>
+  <h1>Himmelseng</h1>
+</header>
+
 <main>
   <RandomVerse />
   <VerseForm />
   <AllVerses />
 </main>
+
+<footer>
+Made with Svelte. Hosted on Netlify.
+</footer>
