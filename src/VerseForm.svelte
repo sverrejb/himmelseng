@@ -1,4 +1,7 @@
 <script>
+    import { notifier } from "@beyonk/svelte-notifications";
+    let form;
+    
     async function handleSubmit(event) {
         const name = event.target.name.value;
         const verse = event.target.verse.value;
@@ -12,6 +15,8 @@
             body: JSON.stringify({ name: name, verse: verse })
         });
         console.log(response);
+        form.reset();
+        notifier.success('Takk! Ditt bidrag er mottatt.');
     }
 </script>
 
@@ -19,21 +24,30 @@
     section {
         grid-area: Submit-Verse;
     }
+    textarea {
+        resize: none;
+    }
 </style>
 
 <section>
     <h1>Send inn vers!</h1>
-    <form on:submit|preventDefault="{handleSubmit}">
+    <form bind:this={form} on:submit|preventDefault="{handleSubmit}">
         <div>
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" required />
+            <label for="name">Tittel:</label>
+            <input type="text" placeholder="Valgfritt" name="name" id="name"/>
         </div>
         <div>
-            <label for="verse">Verse:</label>
-            <input type="text" name="verse" id="verse" required />
+            <label for="verse">Vers:</label>
+            <textarea
+                name="verse"
+                id="verse"
+                rows="4"
+                placeholder="Tekst på fire linjer, takk! :)"
+                required
+            ></textarea>
         </div>
         <div>
-            <input type="submit" value="Submit!" />
+            <input type="submit" value="Send inn!" />
         </div>
     </form>
 </section>

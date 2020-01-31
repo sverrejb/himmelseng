@@ -7,6 +7,7 @@
   section {
     grid-area: All-verses;
     overflow: scroll;
+    padding: 0 1rem;
   }
 
   @media (max-width: 860px) {

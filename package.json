@@ -9,6 +9,7 @@
     "build:lambda": "netlify-lambda build /functions"
   },
   "devDependencies": {
+    "@beyonk/svelte-notifications": "^2.0.3",
     "@rollup/plugin-commonjs": "^11.0.0",
     "@rollup/plugin-json": "^4.0.1",
     "@rollup/plugin-node-resolve": "^6.0.0",
