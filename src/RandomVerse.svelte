@@ -6,9 +6,6 @@
     randomVerse = verses[Math.floor(Math.random() * verses.length)]
   }
   getRandomVerse();
-
-  
-
 </script>
 
 <style>
@@ -20,6 +17,6 @@
 
 <section>
   <h1>Tilfeldig vers</h1>
-<Verse bind:verse={randomVerse} />
+<Verse verse={randomVerse} />
 <button on:click="{getRandomVerse}">Nytt vers!</button>
 </section>
