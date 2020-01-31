@@ -4,13 +4,13 @@
 </script>
 
 <style>
-section {
-    background-color: cadetblue;
-}
-
+  section {
+    grid-area: All-verses;
+  }
 </style>
 
 <section>
+  <h1>Alle vers</h1>
   {#each verses as verse}
     <Verse verse={verse} />
   {/each}

@@ -6,8 +6,14 @@
 </script>
 
 <style>
+  section {
+    grid-area: Random-Verse;
+  }
 
 </style>
 
+<section>
+  <h1>Tilfeldig vers</h1>
 <Verse verse={randomVerse} />
-<button>Tilfeldig vers</button>
+<button>Nytt vers</button>
+</section>

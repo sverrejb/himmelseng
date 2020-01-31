@@ -15,7 +15,14 @@
   }
 </script>
 
+<style>
+  form {
+    grid-area: Submit-Verse;
+  }
+</style>
+
 <form on:submit|preventDefault={handleSubmit}>
+  <h1>Send inn vers!</h1>
   <div>
     <label for="name">Name:</label>
     <input type="text" name="name" id="name" required />
