@@ -10,6 +10,7 @@
     padding: 1em;
     max-width: 90vw;
     margin: 0 auto;
+    padding: 0;
   }
 
   h1 {
@@ -36,6 +37,4 @@
   <AllVerses />
 </main>
 
-<footer>
-Made with Svelte. Hosted on Netlify.
-</footer>
+<footer>Made with Svelte. Hosted on Netlify.</footer>
