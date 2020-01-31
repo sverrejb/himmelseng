@@ -12,6 +12,6 @@ section {
 
 <section>
   {#each verses as verse}
-    <Verse rverse={verse.text} />
+    <Verse verse={verse} />
   {/each}
 </section>

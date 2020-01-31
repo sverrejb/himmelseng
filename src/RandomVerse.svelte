@@ -2,12 +2,12 @@
   import Verse from "./Verse.svelte";
   import verses from "./verses-fixture.json";
   export const title = "foo";
-  export const txt = verses[Math.floor(Math.random() * verses.length)].text;
+  export let randomVerse = verses[Math.floor(Math.random() * verses.length)];
 </script>
 
 <style>
 
 </style>
 
-<Verse rverse={txt} />
+<Verse verse={randomVerse} />
 <button>Tilfeldig vers</button>

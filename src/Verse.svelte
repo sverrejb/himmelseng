@@ -1,5 +1,5 @@
 <script>
-  export let rverse = "Placeholder text";
+  export let verse = {text: "Placholder", title: "Foo"};
 </script>
 
 <style>
@@ -14,6 +14,6 @@
 </style>
 
 <div>
-  <h3>Title</h3>
-  <p>{rverse}</p>
+  <h3>{verse.title}</h3>
+  <p>{verse.text}</p>
 </div>
