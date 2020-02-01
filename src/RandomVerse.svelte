@@ -11,7 +11,6 @@
 <style>
   section {
     grid-area: Random-Verse;
-    margin-left: 3rem;
   }
 
 </style>

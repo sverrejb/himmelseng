@@ -7,10 +7,15 @@
   section {
     grid-area: All-verses;
     overflow: scroll;
-    padding: 0 1rem;
+    background-color: lightgray;
+    width: 100%;
   }
 
-  @media (max-width: 860px) {
+  div {
+    padding: 1rem;
+  }
+
+  @media (max-width: 750px) {
     section {
         overflow: unset;
     }
@@ -19,8 +24,10 @@
 </style>
 
 <section>
-  <h1>Alle vers</h1>
-  {#each verses as verse}
-    <Verse verse={verse} />
-  {/each}
+  <div>
+    <h1>Alle vers</h1>
+    {#each verses as verse}
+      <Verse verse={verse} />
+    {/each}
+  </div>
 </section>

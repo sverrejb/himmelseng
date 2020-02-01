@@ -9,10 +9,11 @@
     padding: 0.2rem 0.7rem;
     margin: 0.7rem 0;
     background-color: white;
+    width: 20rem;
   }
 </style>
 
 <div>
   <h3>{verse.title}</h3>
-  <p>{verse.text}</p>
+  <pre>{verse.text}</pre>
 </div>
