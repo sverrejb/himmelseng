@@ -13,7 +13,7 @@ for filename in os.listdir(PATH):
         data = json.load(json_file)
         verses.append(data)
 
-with open('src/verses.json', 'w') as file:
-    json.dump(verses, file)
+with open('src/verses.json', 'w', encoding='utf-8') as file:
+    json.dump(verses, file, ensure_ascii=False)
 
 print(f'{len(verses)} verses built')
