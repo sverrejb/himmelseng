@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
+"""this lambda reads all verse files from the verses-folder and bakes them into one for the app to use"""
+
 import os
 import json
 
 PATH = 'verses/'
-
 verses = []
 
 for filename in os.listdir(PATH):
@@ -12,9 +13,7 @@ for filename in os.listdir(PATH):
         data = json.load(json_file)
         verses.append(data)
 
-print(verses)
-
 with open('src/verses.json', 'w') as file:
     json.dump(verses, file)
 
-print(verses)
+print(f'{len(verses)} verses built')
