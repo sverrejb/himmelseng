@@ -16,4 +16,4 @@ for filename in os.listdir(PATH):
 with open('src/verses.json', 'w', encoding='utf-8') as file:
     json.dump(verses, file, ensure_ascii=False)
 
-print(f'{len(verses)} verses built')
+print('{} verses built'.format(len(verses)))
