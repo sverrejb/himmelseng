@@ -2,12 +2,6 @@ const axios = require('axios');
 const sanitizeHtml = require('sanitize-html');
 
 exports.handler = async (event) => {
-
-    return {
-        statusCode: 200,
-        body: "ok",
-    }
-
     const { GITHUB_API_KEY } = process.env;
     const REPO = 'himmelseng';
     const USER = 'sverrejb';
