@@ -3,8 +3,8 @@
     let form;
     
     async function handleSubmit(event) {
-        const name = event.target.name.value;
-        const verse = event.target.verse.value;
+        const name = event.target.title.value;
+        const verse = event.target.text.value;
 
         const response = await fetch("/.netlify/functions/submit-verse", {
             method: "POST",
