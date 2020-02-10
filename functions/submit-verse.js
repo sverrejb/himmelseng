@@ -62,7 +62,7 @@ exports.handler = async (event) => {
     const buff = new Buffer.from(clean_data);
     const file_data = buff.toString('base64');
     const file_name = `verse_${branch_name}`;
-    const commit_url = `${github_api_url}/repos/${USER}/${REPO}/contents/verses/${file_name}.txt`
+    const commit_url = `${github_api_url}/repos/${USER}/${REPO}/contents/verses/${file_name}.json`
 
     const commit_data = {
         message: "Added new verse",

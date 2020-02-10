@@ -33,14 +33,14 @@
     <h1>Send inn vers!</h1>
     <form bind:this={form} on:submit|preventDefault="{handleSubmit}">
         <div>
-            <label for="name">Tittel:</label>
-            <input type="text" placeholder="Valgfritt" name="name" id="name"/>
+            <label for="title">Tittel:</label>
+            <input type="text" placeholder="Valgfritt" name="title" id="title"/>
         </div>
         <div>
-            <label for="verse">Vers:</label>
+            <label for="text">Vers:</label>
             <textarea
-                name="verse"
-                id="verse"
+                name="text"
+                id="text"
                 rows="4"
                 placeholder="Tekst på fire linjer, takk! :)"
                 required
