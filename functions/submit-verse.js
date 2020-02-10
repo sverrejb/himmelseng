@@ -85,7 +85,7 @@ exports.handler = async (event) => {
 
     const pullrequest_url = `${github_api_url}/repos/${USER}/${REPO}/pulls`
     const pullrequest_data = {
-        title: `New verse added: ${SUBMIT_EVENT_BODY.name}`,
+        title: `New verse added: ${SUBMIT_EVENT_BODY.title}`,
         body: SUBMIT_EVENT_BODY.comment,
         head: branch_name,
         base: PUBLISH_BRANCH,
