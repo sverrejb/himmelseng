@@ -22,8 +22,8 @@ exports.handler = async (event) => {
     }
     else {
         SUBMIT_EVENT_BODY = {
-            name: "Test",
-            comment: "Lorem Ipsum"
+            title: "Test",
+            text: "Lorem Ipsum"
         }
     }
 
@@ -36,7 +36,7 @@ exports.handler = async (event) => {
         });
 
     const master_branch_SHA = ref_response.data.object.sha;
-    const branch_name = `${Date.now()}_${SUBMIT_EVENT_BODY.name}`
+    const branch_name = `${Date.now()}_${SUBMIT_EVENT_BODY.title}`
     const branch_url = `${github_api_url}/repos/${USER}/${REPO}/git/refs`
     const branch_data = {
         ref: `refs/heads/${branch_name}`,
