@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""this lambda reads all verse files from the verses-folder and bakes them into one for the app to use"""
+# this script reads all verse files from the verses-folder and bakes them into one for the app to use
 
 import os
 import json

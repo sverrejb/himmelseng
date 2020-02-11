@@ -13,11 +13,12 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     display: grid;
-    justify-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 4fr 1fr;
+    justify-items: left;
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-rows: 4fr 4fr auto;
     grid-template-areas:
-        "Random-Verse Submit-Verse All-verses "
+        "Foo Submit-Verse All-verses "
+        "Foo Random-Verse All-verses"
         "Footer Footer All-verses";
 }
 
@@ -25,7 +26,10 @@ body {
     body {
         grid-template-columns: 1fr;
         grid-template-rows: 2fr 2fr 2fr 1fr;
-        grid-template-areas: "Random-Verse" "Submit-Verse" "All-verses" "Footer"; 
+        grid-template-areas:    "Random-Verse"
+                                "Submit-Verse"
+                                "All-verses"
+                                "Footer"; 
     }
 }
 
