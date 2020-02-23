@@ -15,10 +15,10 @@ body {
     display: grid;
     justify-items: left;
     grid-template-columns: 1fr 1fr auto;
-    grid-template-rows: 4fr 4fr auto;
+    grid-template-rows: 2fr 2fr 1fr;
     grid-template-areas:
-        "Foo Submit-Verse All-verses "
-        "Foo Random-Verse All-verses"
+        "Info Random-Verse All-verses "
+        "Info Submit-Verse All-verses"
         "Footer Footer All-verses";
 }
 

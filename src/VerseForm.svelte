@@ -1,10 +1,18 @@
 <script>
     import { notifier } from "@beyonk/svelte-notifications";
     let form;
+    let disabled = false;
     
     async function handleSubmit(event) {
+        disabled = true;
         const title = event.target.title.value;
         const text = event.target.text.value;
+
+        if (text.split('\n').filter(i => i.length > 0).length !== 4) {
+            notifier.info('Tekst på fire linjer, takk! :)', 5000)
+            disabled = false;
+            return
+        }
 
         const response = await fetch("/.netlify/functions/submit-verse", {
             method: "POST",
@@ -14,9 +22,14 @@
             },
             body: JSON.stringify({title, text})
         });
-        console.log(response);
-        form.reset();
-        notifier.success('Takk! Ditt bidrag er mottatt.');
+        
+        if (response.ok) {
+            notifier.success('Takk! Ditt vers er mottatt.', 5000);
+            form.reset();
+        } else {
+            notifier.danger('Noe gikk galt :(', 5000);
+        }
+        disabled = false;
     }
 </script>
 
@@ -48,7 +61,7 @@
             ></textarea>
         </div>
         <div>
-            <input type="submit" value="Send inn!" />
+            <input type="submit" value="Send inn!" disabled={disabled} />
         </div>
     </form>
 </section>
