@@ -25,7 +25,7 @@ jeg vet hvor jeg er deilig.`}
 
 <style>
     aside {
-        margin-left: 1rem;
+        padding: 0 1rem;
     }
     @media (min-width: 950px) {
         h2 {display: none;}
