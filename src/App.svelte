@@ -7,17 +7,31 @@
 </script>
 
 <style>
+  header {
+    grid-area: Header;
+    margin-left: 1rem;
+  }
+
   main {
-    margin-top: 4rem;
     grid-area: Main;
   }
+
+  @media (max-width: 750px) {
+    main {
+      margin-left: 1rem;
+    }
+}
+
 </style>
 
 <NotificationDisplay />
+<header>
+  <h1>Himmelseng</h1>
+</header>
 <Info/>
 <main>
   <RandomVerse />
-    <VerseForm />
+  <VerseForm />
 </main>
 
 <AllVerses />

@@ -17,16 +17,18 @@ body {
     justify-items: left;
     column-gap: 2rem;
     grid-template-columns: 1fr 1fr auto;
-    grid-template-rows: 1fr;
+    grid-template-rows: auto 1fr;
     grid-template-areas:
+        "Header Header  All-verses"
         "Info   Main    All-verses "
 }
 
 @media (max-width: 750px) {
     body {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas:    "Main"
+        grid-template-rows: auto 1fr 1fr 1fr;
+        grid-template-areas:    "Header"
+                                "Main"
                                 "All-verses"
                                 "Info"; 
     }
