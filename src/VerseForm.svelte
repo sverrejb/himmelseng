@@ -34,11 +34,20 @@
 </script>
 
 <style>
+
+    h1 {
+        margin-bottom: 0;
+    }
+
     p {
         font-size: 0.8em;
     }
+    input {
+        width: 100%;
+    }
     textarea {
         resize: none;
+        width: 100%
     }
 </style>
 

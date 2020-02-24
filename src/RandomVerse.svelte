@@ -9,6 +9,15 @@
 </script>
 
 <style>
+
+  h1 {
+    margin-top: 0;
+  }
+
+  button {
+    width: 100%;
+  }
+
   section {
     min-width: 100%
   }
@@ -16,6 +25,6 @@
 
 <section>
   <h1>Tilfeldig vers</h1>
-<Verse verse={randomVerse} />
-<button on:click="{getRandomVerse}">Nytt vers!</button>
+  <Verse verse={randomVerse} />
+  <button on:click="{getRandomVerse}">Nytt vers!</button>
 </section>

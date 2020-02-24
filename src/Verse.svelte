@@ -13,6 +13,8 @@
 </style>
 
 <div>
-  <h3>{verse.title}</h3>
+  {#if verse.title}
+    <h3>{verse.title}</h3>
+  {/if}
   <pre>{verse.text}</pre>
 </div>
