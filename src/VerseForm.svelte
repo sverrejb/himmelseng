@@ -34,11 +34,9 @@
 </script>
 
 <style>
-
     h1 {
         margin-bottom: 0;
     }
-
     p {
         font-size: 0.8em;
     }
