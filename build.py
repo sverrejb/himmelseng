@@ -8,7 +8,7 @@ import json
 PATH = 'verses/'
 verses = []
 
-print('\n\n 🛠Starting build script')
+print('🛠 Starting build script')
 
 for filename in os.listdir(PATH):
     with open(PATH + filename) as json_file:
@@ -18,4 +18,4 @@ for filename in os.listdir(PATH):
 with open('src/verses.json', 'w', encoding='utf-8') as file:
     json.dump(verses, file, ensure_ascii=False)
 
-print('🛠{} verses built \n\n'.format(len(verses)))
+print('🛠 {} verses built \n\n'.format(len(verses)))
