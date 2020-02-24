@@ -3,6 +3,7 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
+    font-size: 18px
 }
 
 body {
@@ -14,22 +15,20 @@ body {
         Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     display: grid;
     justify-items: left;
+    column-gap: 2rem;
     grid-template-columns: 1fr 1fr auto;
-    grid-template-rows: 2fr 2fr 1fr;
+    grid-template-rows: 1fr;
     grid-template-areas:
-        "Info   Random-Verse    All-verses "
-        "Info   Submit-Verse    All-verses"
-        "Footer Footer          All-verses";
+        "Info   Main    All-verses "
 }
 
 @media (max-width: 750px) {
     body {
         grid-template-columns: 1fr;
-        grid-template-rows: 2fr 2fr 2fr 1fr;
-        grid-template-areas:    "Random-Verse"
-                                "Submit-Verse"
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:    "Main"
                                 "All-verses"
-                                "Footer"; 
+                                "Info"; 
     }
 }
 

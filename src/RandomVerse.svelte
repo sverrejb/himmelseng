@@ -9,10 +9,6 @@
 </script>
 
 <style>
-  section {
-    grid-area: Random-Verse;
-  }
-
 </style>
 
 <section>

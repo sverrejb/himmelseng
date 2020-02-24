@@ -3,20 +3,21 @@
   import AllVerses from "./AllVerses.svelte";
   import VerseForm from "./VerseForm.svelte";
   import RandomVerse from "./RandomVerse.svelte";
+  import Info from "./Info.svelte"
 </script>
 
 <style>
-  footer {
-    grid-area: Footer;
-    background-color: dimgrey;
-    width: 100%;
+  main {
+    margin-top: 4rem;
+    grid-area: Main;
   }
 </style>
 
 <NotificationDisplay />
-<RandomVerse />
-<VerseForm />
+<Info/>
+<main>
+  <RandomVerse />
+    <VerseForm />
+</main>
+
 <AllVerses />
-<footer>
-  Footer her
-</footer>

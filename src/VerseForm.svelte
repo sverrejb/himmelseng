@@ -34,9 +34,10 @@
 </script>
 
 <style>
-    section {
-        grid-area: Submit-Verse;
+    p {
+        font-size: 0.8em;
     }
+    
     textarea {
         resize: none;
     }
@@ -44,6 +45,7 @@
 
 <section>
     <h1>Send inn vers!</h1>
+    <p>Innsendte bidrag blir kvalitetssjekket før publisering.</p>
     <form bind:this={form} on:submit|preventDefault="{handleSubmit}">
         <div>
             <label for="title">Tittel:</label>
