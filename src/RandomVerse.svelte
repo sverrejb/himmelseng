@@ -9,6 +9,9 @@
 </script>
 
 <style>
+  section {
+    min-width: 100%
+  }
 </style>
 
 <section>

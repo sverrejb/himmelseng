@@ -37,7 +37,6 @@
     p {
         font-size: 0.8em;
     }
-    
     textarea {
         resize: none;
     }
@@ -57,7 +56,6 @@
                 name="text"
                 id="text"
                 rows="4"
-                cols="35"
                 placeholder="Tekst på fire linjer, takk! :)"
                 required
             ></textarea>

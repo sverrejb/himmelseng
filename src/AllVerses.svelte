@@ -15,7 +15,7 @@
     padding: 1rem;
   }
 
-  @media (max-width: 750px) {
+  @media (max-width: 950px) {
     section {
         overflow: unset;
     }

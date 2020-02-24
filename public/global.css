@@ -23,7 +23,7 @@ body {
         "Info   Main    All-verses "
 }
 
-@media (max-width: 750px) {
+@media (max-width: 950px) {
     body {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr 1fr 1fr;

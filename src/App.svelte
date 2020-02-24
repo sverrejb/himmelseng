@@ -16,7 +16,7 @@
     grid-area: Main;
   }
 
-  @media (max-width: 750px) {
+  @media (max-width: 950px) {
     main {
       margin-left: 1rem;
     }

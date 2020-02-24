@@ -1,13 +1,13 @@
 <script>
   import Verse from "./Verse.svelte";
 
-  const firstVerse = {title: "Første vers",
+  const firstVerse = {title: 'Første vers',
   text: `Jeg ønsker meg en himmelseng
 en himmelseng med speil i
 så jeg kan ligge og speile meg
 og se hvor jeg er deilig.`}
 
-  const refrain = {title: "Refreng",
+  const refrain = {title: 'Refreng',
   text: `Hey lå li lå li lå
 li lå li lå li låa,
 hey lå li lå li lå
@@ -15,7 +15,7 @@ li lå li lå li låa!
 Ompa ompa ompa sprut,
 ompa ompa sprut sprut!`
 }
-  const lastVerse = {title: "Siste vers",
+  const lastVerse = {title: 'Siste vers',
   text: `Jeg trenger ingen himmelseng,
 en himmelseng med speil i.
 Jeg trenger ikke speile meg,
@@ -27,7 +27,7 @@ jeg vet hvor jeg er deilig.`}
     aside {
         margin-left: 1rem;
     }
-    @media (min-width: 750px) {
+    @media (min-width: 950px) {
         h2 {display: none;}
 }
 </style>
