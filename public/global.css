@@ -17,9 +17,9 @@ body {
     grid-template-columns: 1fr 1fr auto;
     grid-template-rows: 2fr 2fr 1fr;
     grid-template-areas:
-        "Info Random-Verse All-verses "
-        "Info Submit-Verse All-verses"
-        "Footer Footer All-verses";
+        "Info   Random-Verse    All-verses "
+        "Info   Submit-Verse    All-verses"
+        "Footer Footer          All-verses";
 }
 
 @media (max-width: 750px) {
