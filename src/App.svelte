@@ -18,6 +18,7 @@
 
   @media (max-width: 950px) {
     main {
+      width: 90%;
       margin-left: 1rem;
     }
 }
